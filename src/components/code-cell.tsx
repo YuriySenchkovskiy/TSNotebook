@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import {useEffect, useState} from 'react';
 import CodeEditor from './code-editor';
 import Preview from './preview';
 import bundle from '../bundler';
@@ -8,11 +8,19 @@ const CodeCell = () => {
     const [code, setCode] = useState('');
     const [input, setInput] = useState('');
     const [resizing, setResizing] = useState(false);
+    const [err, setErr] = useState('');
 
-    const onClick = async () => {
-        const output = await bundle(input);
-        setCode(output);
-    };
+    useEffect(() => {
+        const timer = setTimeout(async() => {
+            const output = await bundle(input);
+            setCode(output.code);
+            setErr(output.err);
+        }, 1000);
+
+        return () => {
+          clearTimeout(timer);
+        };
+    }, [input]);
 
     return (
         <Resizable
@@ -27,7 +35,7 @@ const CodeCell = () => {
                     onChange={(value) => setInput(value)}
                 />
                 </Resizable>
-                <Preview code={code}/>
+                <Preview code={code} bundlingStatus={err}/>
                 {resizing && <div className="resizing-overlay"></div>}
             </div>
         </Resizable>
