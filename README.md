@@ -1,4 +1,4 @@
-<img width="1284" alt="image" src="https://github.com/YuriySenchkovskiy/TSNotebook/assets/69895797/5a32fba1-38ce-4ddb-89a2-84b9a5315211">
+<img width="1274" alt="image" src="https://github.com/YuriySenchkovskiy/TSNotebook/assets/69895797/7e374cf8-9ac0-4f1b-b9cb-00a9d48d9fbc">
 
 # React Online Code Editor
 
