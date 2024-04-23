@@ -10,4 +10,3 @@ This project is an online code editor built with React, Redux, TypeScript, and t
 - **State Management**: Utilizes Redux for efficient, predictable state management, ensuring your editing session remains responsive and manageable.
 - **TypeScript Support**: Full TypeScript integration to benefit from static type checking and the latest ECMAScript features.
 - **Real-time Preview**: Instantly visualize the output of your code as you type, aiding in quick iterations and debugging.
-- **Responsive Layout**: A flexible interface that adapts to different screen sizes, allowing for a seamless coding experience on any device.
